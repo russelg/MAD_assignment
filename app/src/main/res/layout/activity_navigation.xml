@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="@android:color/darker_gray"
+    android:backgroundTintMode="multiply"
+    tools:context=".NavigationActivity">
+
+    <ImageView
+        android:id="@+id/areaBackground"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_building1"
+        android:tint="?attr/colorBackgroundFloating"
+        android:tintMode="multiply"
+        app:layout_constraintBottom_toTopOf="@+id/statusBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonNorth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:text="@string/direction_north"
+        app:layout_constraintBottom_toTopOf="@+id/centre_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonEast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:enabled="false"
+        android:text="@string/direction_east"
+        app:layout_constraintBottom_toTopOf="@+id/statusBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonSouth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:text="@string/direction_south"
+        app:layout_constraintBottom_toTopOf="@+id/statusBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/centre_container" />
+
+    <Button
+        android:id="@+id/buttonWest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:enabled="false"
+        android:text="@string/direction_west"
+        app:layout_constraintBottom_toTopOf="@+id/statusBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <FrameLayout
+        android:id="@+id/statusBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/centre_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:divider="?attr/dividerVertical"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/buttonSouth"
+        app:layout_constraintEnd_toStartOf="@+id/buttonEast"
+        app:layout_constraintStart_toEndOf="@+id/buttonWest"
+        app:layout_constraintTop_toBottomOf="@+id/buttonNorth">
+
+        <FrameLayout
+            android:id="@+id/area_info"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="?attr/dividerVertical"
+            android:orientation="vertical">
+
+        </FrameLayout>
+
+        <Button
+            android:id="@+id/buttonAreaOptions"
+            android:layout_width="128dp"
+            android:layout_height="wrap_content"
+            android:text="@string/area_options" />
+
+        <Button
+            android:id="@+id/buttonOverview"
+            android:layout_width="128dp"
+            android:layout_height="wrap_content"
+            android:text="@string/area_overview" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
